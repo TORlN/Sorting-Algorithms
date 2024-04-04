@@ -24,309 +24,311 @@ from hybrid_sort3 import hybrid_sort3
 # from hybrid_sort import hybrid_sort1, hybrid_sort2, hybrid_sort3
 
 
-def insertion_sort_test():
-    # Test case 1: Empty list
-    arr = []
-    arrSorted = sorted(arr)
-    insertion_sort(arr)
-    assert arr == arrSorted
+# NOTE: commenting out tests to ensure gradescope compatibility
 
-    # Test case 2: List with one element
-    arr = [5]
-    arrSorted = sorted(arr)
-    insertion_sort(arr)
-    assert arr == arrSorted
+# def insertion_sort_test():
+#     # Test case 1: Empty list
+#     arr = []
+#     arrSorted = sorted(arr)
+#     insertion_sort(arr)
+#     assert arr == arrSorted
 
-    # Test case 3: List with multiple elements
-    arr = [9, 3, 7, 1, 5, 2, 8, 4, 6, 10, 15, 12, 11, 14, 13]
-    arrSorted = sorted(arr)
-    insertion_sort(arr)
-    assert arr == arrSorted
+#     # Test case 2: List with one element
+#     arr = [5]
+#     arrSorted = sorted(arr)
+#     insertion_sort(arr)
+#     assert arr == arrSorted
 
-    # Test case 4: List with duplicate elements
-    arr = [5, 2, 8, 2, 5, 1, 3, 4, 6, 7, 9, 10, 11, 12, 13]
-    arrSorted = sorted(arr)
-    insertion_sort(arr)
-    assert arr == arrSorted
+#     # Test case 3: List with multiple elements
+#     arr = [9, 3, 7, 1, 5, 2, 8, 4, 6, 10, 15, 12, 11, 14, 13]
+#     arrSorted = sorted(arr)
+#     insertion_sort(arr)
+#     assert arr == arrSorted
 
-    # Test case 5: List with negative numbers
-    arr = [-4, -2, -7, -1, -5, -3, -6, -8, -9, -10, -11, -12, -13, -14, -15]
-    arrSorted = sorted(arr)
-    insertion_sort(arr)
-    assert arr == arrSorted
+#     # Test case 4: List with duplicate elements
+#     arr = [5, 2, 8, 2, 5, 1, 3, 4, 6, 7, 9, 10, 11, 12, 13]
+#     arrSorted = sorted(arr)
+#     insertion_sort(arr)
+#     assert arr == arrSorted
 
-    print("Insertion Sort: PASSED")
+#     # Test case 5: List with negative numbers
+#     arr = [-4, -2, -7, -1, -5, -3, -6, -8, -9, -10, -11, -12, -13, -14, -15]
+#     arrSorted = sorted(arr)
+#     insertion_sort(arr)
+#     assert arr == arrSorted
 
-def merge_sort_test():
-    # Test case 1: Empty list
-    arr = []
-    merge_sort(arr)
-    assert arr == []
+#     print("Insertion Sort: PASSED")
 
-    # Test case 2: List with one element
-    arr = [5]
-    merge_sort(arr)
-    assert arr == [5]
+# def merge_sort_test():
+#     # Test case 1: Empty list
+#     arr = []
+#     merge_sort(arr)
+#     assert arr == []
 
-    # Test case 3: List with multiple elements
-    arr = [9, 3, 7, 1, 5, 2, 8, 4, 6, 10, 15, 12, 11, 14, 13]
-    arrSorted = sorted(arr)
-    merge_sort(arr)
-    assert arr == arrSorted
+#     # Test case 2: List with one element
+#     arr = [5]
+#     merge_sort(arr)
+#     assert arr == [5]
 
-    # Test case 4: List with duplicate elements
-    arr = [5, 2, 8, 2, 5, 1, 3, 4, 6, 7, 9, 10, 11, 12, 13]
-    arrSorted = sorted(arr)
-    merge_sort(arr)
-    assert arr == arrSorted 
+#     # Test case 3: List with multiple elements
+#     arr = [9, 3, 7, 1, 5, 2, 8, 4, 6, 10, 15, 12, 11, 14, 13]
+#     arrSorted = sorted(arr)
+#     merge_sort(arr)
+#     assert arr == arrSorted
 
-    # Test case 5: List with negative numbers
-    arr = [-4, -2, -7, -1, -5, -3, -6, -8, -9, -10, -11, -12, -13, -14, -15]
-    arrSorted = sorted(arr)
-    merge_sort(arr)
-    assert arr == arrSorted 
+#     # Test case 4: List with duplicate elements
+#     arr = [5, 2, 8, 2, 5, 1, 3, 4, 6, 7, 9, 10, 11, 12, 13]
+#     arrSorted = sorted(arr)
+#     merge_sort(arr)
+#     assert arr == arrSorted 
 
-    print("Merge Sort: PASSED")
+#     # Test case 5: List with negative numbers
+#     arr = [-4, -2, -7, -1, -5, -3, -6, -8, -9, -10, -11, -12, -13, -14, -15]
+#     arrSorted = sorted(arr)
+#     merge_sort(arr)
+#     assert arr == arrSorted 
 
-def shell_sort_1_test():
-    # Test case 1: Empty list
-    arr = []
-    arrSorted = sorted(arr)
-    shell_sort1(arr)
-    assert arr == arrSorted
+#     print("Merge Sort: PASSED")
 
-    # Test case 2: List with one element
-    arr = [5]
-    arrSorted = sorted(arr)
-    shell_sort1(arr)
-    assert arr == arrSorted
+# def shell_sort_1_test():
+#     # Test case 1: Empty list
+#     arr = []
+#     arrSorted = sorted(arr)
+#     shell_sort1(arr)
+#     assert arr == arrSorted
 
-    # Test case 3: List with multiple elements
-    arr = [9, 3, 7, 1, 5, 2, 8, 4, 6, 10, 15, 12, 11, 14, 13]
-    arrSorted = sorted(arr)
-    shell_sort1(arr)
-    assert arr == arrSorted
+#     # Test case 2: List with one element
+#     arr = [5]
+#     arrSorted = sorted(arr)
+#     shell_sort1(arr)
+#     assert arr == arrSorted
 
-    # Test case 4: List with duplicate elements
-    arr = [5, 2, 8, 2, 5, 1, 3, 4, 6, 7, 9, 10, 11, 12, 13]
-    arrSorted = sorted(arr)
-    shell_sort1(arr)
-    assert arr == arrSorted
+#     # Test case 3: List with multiple elements
+#     arr = [9, 3, 7, 1, 5, 2, 8, 4, 6, 10, 15, 12, 11, 14, 13]
+#     arrSorted = sorted(arr)
+#     shell_sort1(arr)
+#     assert arr == arrSorted
 
-    # Test case 5: List with negative numbers
-    arr = [-4, -2, -7, -1, -5, -3, -6, -8, -9, -10, -11, -12, -13, -14, -15]
-    arrSorted = sorted(arr)
-    shell_sort1(arr)
-    assert arr == arrSorted
+#     # Test case 4: List with duplicate elements
+#     arr = [5, 2, 8, 2, 5, 1, 3, 4, 6, 7, 9, 10, 11, 12, 13]
+#     arrSorted = sorted(arr)
+#     shell_sort1(arr)
+#     assert arr == arrSorted
 
-    print("Shell Sort 1: PASSED")
+#     # Test case 5: List with negative numbers
+#     arr = [-4, -2, -7, -1, -5, -3, -6, -8, -9, -10, -11, -12, -13, -14, -15]
+#     arrSorted = sorted(arr)
+#     shell_sort1(arr)
+#     assert arr == arrSorted
 
-def shell_sort_2_test():
-    # Test case 1: Empty list
-    arr = []
-    arrSorted = sorted(arr)
-    shell_sort2(arr)
-    assert arr == arrSorted
+#     print("Shell Sort 1: PASSED")
 
-    # Test case 2: List with one element
-    arr = [5]
-    arrSorted = sorted(arr)
-    shell_sort2(arr)
-    assert arr == arrSorted
+# def shell_sort_2_test():
+#     # Test case 1: Empty list
+#     arr = []
+#     arrSorted = sorted(arr)
+#     shell_sort2(arr)
+#     assert arr == arrSorted
 
-    # Test case 3: List with multiple elements
-    arr = [9, 3, 7, 1, 5, 2, 8, 4, 6, 10, 15, 12, 11, 14, 13]
-    arrSorted = sorted(arr)
-    shell_sort2(arr)
-    assert arr == arrSorted
+#     # Test case 2: List with one element
+#     arr = [5]
+#     arrSorted = sorted(arr)
+#     shell_sort2(arr)
+#     assert arr == arrSorted
 
-    # Test case 4: List with duplicate elements
-    arr = [5, 2, 8, 2, 5, 1, 3, 4, 6, 7, 9, 10, 11, 12, 13]
-    arrSorted = sorted(arr)
-    shell_sort2(arr)
-    assert arr == arrSorted
+#     # Test case 3: List with multiple elements
+#     arr = [9, 3, 7, 1, 5, 2, 8, 4, 6, 10, 15, 12, 11, 14, 13]
+#     arrSorted = sorted(arr)
+#     shell_sort2(arr)
+#     assert arr == arrSorted
 
-    # Test case 5: List with negative numbers
-    arr = [-4, -2, -7, -1, -5, -3, -6, -8, -9, -10, -11, -12, -13, -14, -15]
-    arrSorted = sorted(arr)
-    shell_sort2(arr)
-    assert arr == arrSorted
+#     # Test case 4: List with duplicate elements
+#     arr = [5, 2, 8, 2, 5, 1, 3, 4, 6, 7, 9, 10, 11, 12, 13]
+#     arrSorted = sorted(arr)
+#     shell_sort2(arr)
+#     assert arr == arrSorted
 
-    print("Shell Sort 2: PASSED")
+#     # Test case 5: List with negative numbers
+#     arr = [-4, -2, -7, -1, -5, -3, -6, -8, -9, -10, -11, -12, -13, -14, -15]
+#     arrSorted = sorted(arr)
+#     shell_sort2(arr)
+#     assert arr == arrSorted
 
-def shell_sort_3_test():
-    # Test case 1: Empty list
-    arr = []
-    arrSorted = sorted(arr)
-    shell_sort3(arr)
-    assert arr == arrSorted
+#     print("Shell Sort 2: PASSED")
 
-    # Test case 2: List with one element
-    arr = [5]
-    arrSorted = sorted(arr)
-    shell_sort3(arr)
-    assert arr == arrSorted
+# def shell_sort_3_test():
+#     # Test case 1: Empty list
+#     arr = []
+#     arrSorted = sorted(arr)
+#     shell_sort3(arr)
+#     assert arr == arrSorted
 
-    # Test case 3: List with multiple elements
-    arr = [9, 3, 7, 1, 5, 2, 8, 4, 6, 10, 15, 12, 11, 14, 13]
-    arrSorted = sorted(arr)
-    shell_sort3(arr)
-    assert arr == arrSorted
+#     # Test case 2: List with one element
+#     arr = [5]
+#     arrSorted = sorted(arr)
+#     shell_sort3(arr)
+#     assert arr == arrSorted
 
-    # Test case 4: List with duplicate elements
-    arr = [5, 2, 8, 2, 5, 1, 3, 4, 6, 7, 9, 10, 11, 12, 13]
-    arrSorted = sorted(arr)
-    shell_sort3(arr)
-    assert arr == arrSorted
+#     # Test case 3: List with multiple elements
+#     arr = [9, 3, 7, 1, 5, 2, 8, 4, 6, 10, 15, 12, 11, 14, 13]
+#     arrSorted = sorted(arr)
+#     shell_sort3(arr)
+#     assert arr == arrSorted
 
-    # Test case 5: List with negative numbers
-    arr = [-4, -2, -7, -1, -5, -3, -6, -8, -9, -10, -11, -12, -13, -14, -15]
-    arrSorted = sorted(arr)
-    shell_sort3(arr)
-    assert arr == arrSorted
+#     # Test case 4: List with duplicate elements
+#     arr = [5, 2, 8, 2, 5, 1, 3, 4, 6, 7, 9, 10, 11, 12, 13]
+#     arrSorted = sorted(arr)
+#     shell_sort3(arr)
+#     assert arr == arrSorted
 
-    print("Shell Sort 3: PASSED")
+#     # Test case 5: List with negative numbers
+#     arr = [-4, -2, -7, -1, -5, -3, -6, -8, -9, -10, -11, -12, -13, -14, -15]
+#     arrSorted = sorted(arr)
+#     shell_sort3(arr)
+#     assert arr == arrSorted
 
-def shell_sort_4_test():
-    # Test case 1: Empty list
-    arr = []
-    arrSorted = sorted(arr)
-    shell_sort4(arr)
-    assert arr == arrSorted
+#     print("Shell Sort 3: PASSED")
 
-    # Test case 2: List with one element
-    arr = [5]
-    arrSorted = sorted(arr)
-    shell_sort4(arr)
-    assert arr == arrSorted
+# def shell_sort_4_test():
+#     # Test case 1: Empty list
+#     arr = []
+#     arrSorted = sorted(arr)
+#     shell_sort4(arr)
+#     assert arr == arrSorted
 
-    # Test case 3: List with multiple elements
-    arr = [9, 3, 7, 1, 5, 2, 8, 4, 6, 10, 15, 12, 11, 14, 13]
-    arrSorted = sorted(arr)
-    shell_sort4(arr)
-    assert arr == arrSorted
+#     # Test case 2: List with one element
+#     arr = [5]
+#     arrSorted = sorted(arr)
+#     shell_sort4(arr)
+#     assert arr == arrSorted
 
-    # Test case 4: List with duplicate elements
-    arr = [5, 2, 8, 2, 5, 1, 3, 4, 6, 7, 9, 10, 11, 12, 13]
-    arrSorted = sorted(arr)
-    shell_sort4(arr)
-    assert arr == arrSorted
+#     # Test case 3: List with multiple elements
+#     arr = [9, 3, 7, 1, 5, 2, 8, 4, 6, 10, 15, 12, 11, 14, 13]
+#     arrSorted = sorted(arr)
+#     shell_sort4(arr)
+#     assert arr == arrSorted
 
-    # Test case 5: List with negative numbers
-    arr = [-4, -2, -7, -1, -5, -3, -6, -8, -9, -10, -11, -12, -13, -14, -15]
-    arrSorted = sorted(arr)
-    shell_sort4(arr)
-    assert arr == arrSorted
+#     # Test case 4: List with duplicate elements
+#     arr = [5, 2, 8, 2, 5, 1, 3, 4, 6, 7, 9, 10, 11, 12, 13]
+#     arrSorted = sorted(arr)
+#     shell_sort4(arr)
+#     assert arr == arrSorted
 
-    print("Shell Sort 4: PASSED")
+#     # Test case 5: List with negative numbers
+#     arr = [-4, -2, -7, -1, -5, -3, -6, -8, -9, -10, -11, -12, -13, -14, -15]
+#     arrSorted = sorted(arr)
+#     shell_sort4(arr)
+#     assert arr == arrSorted
 
-def hybrid_sort1_test():
-    # Test case 1: Empty list
+#     print("Shell Sort 4: PASSED")
+
+# def hybrid_sort1_test():
+#     # Test case 1: Empty list
     
-    arr = []
-    arrSorted = sorted(arr)
-    hybrid_sort1(arr)
-    assert arr == arrSorted
+#     arr = []
+#     arrSorted = sorted(arr)
+#     hybrid_sort1(arr)
+#     assert arr == arrSorted
 
-    # Test case 2: List with one element
-    arr = [5]
-    arrSorted = sorted(arr)
-    hybrid_sort1(arr)
-    assert arr == arrSorted
+#     # Test case 2: List with one element
+#     arr = [5]
+#     arrSorted = sorted(arr)
+#     hybrid_sort1(arr)
+#     assert arr == arrSorted
 
-    # Test case 3: List with multiple elements
-    arr = [9, 3, 7, 1, 5, 2, 8, 4, 6, 10, 15, 12, 11, 14, 13]
-    arrSorted = sorted(arr)
-    hybrid_sort1(arr)
-    assert arr == arrSorted
+#     # Test case 3: List with multiple elements
+#     arr = [9, 3, 7, 1, 5, 2, 8, 4, 6, 10, 15, 12, 11, 14, 13]
+#     arrSorted = sorted(arr)
+#     hybrid_sort1(arr)
+#     assert arr == arrSorted
 
-    # Test case 4: List with duplicate elements
-    arr = [5, 2, 8, 2, 5, 1, 3, 4, 6, 7, 9, 10, 11, 12, 13]
-    arrSorted = sorted(arr)
-    hybrid_sort1(arr)
-    assert arr == arrSorted
+#     # Test case 4: List with duplicate elements
+#     arr = [5, 2, 8, 2, 5, 1, 3, 4, 6, 7, 9, 10, 11, 12, 13]
+#     arrSorted = sorted(arr)
+#     hybrid_sort1(arr)
+#     assert arr == arrSorted
 
-    # Test case 5: List with negative numbers
-    arr = [-4, -2, -7, -1, -5, -3, -6, -8, -9, -10, -11, -12, -13, -14, -15]
-    arrSorted = sorted(arr)
-    hybrid_sort1(arr)
-    assert arr == arrSorted
+#     # Test case 5: List with negative numbers
+#     arr = [-4, -2, -7, -1, -5, -3, -6, -8, -9, -10, -11, -12, -13, -14, -15]
+#     arrSorted = sorted(arr)
+#     hybrid_sort1(arr)
+#     assert arr == arrSorted
 
-    print("Hybrid Sort 1: PASSED")
+#     print("Hybrid Sort 1: PASSED")
 
-def hybrid_sort2_test():
-    # Test case 1: Empty list
-    arr = []
-    arrSorted = sorted(arr)
-    hybrid_sort2(arr)
-    assert arr == arrSorted
+# def hybrid_sort2_test():
+#     # Test case 1: Empty list
+#     arr = []
+#     arrSorted = sorted(arr)
+#     hybrid_sort2(arr)
+#     assert arr == arrSorted
 
-    # Test case 2: List with one element
-    arr = [5]
-    arrSorted = sorted(arr)
-    hybrid_sort2(arr)
-    assert arr == arrSorted
+#     # Test case 2: List with one element
+#     arr = [5]
+#     arrSorted = sorted(arr)
+#     hybrid_sort2(arr)
+#     assert arr == arrSorted
 
-    # Test case 3: List with multiple elements
-    arr = [9, 3, 7, 1, 5, 2, 8, 4, 6, 10, 15, 12, 11, 14, 13]
-    arrSorted = sorted(arr)
-    hybrid_sort2(arr)
-    assert arr == arrSorted
+#     # Test case 3: List with multiple elements
+#     arr = [9, 3, 7, 1, 5, 2, 8, 4, 6, 10, 15, 12, 11, 14, 13]
+#     arrSorted = sorted(arr)
+#     hybrid_sort2(arr)
+#     assert arr == arrSorted
 
-    # Test case 4: List with duplicate elements
-    arr = [5, 2, 8, 2, 5, 1, 3, 4, 6, 7, 9, 10, 11, 12, 13]
-    arrSorted = sorted(arr)
-    hybrid_sort2(arr)
-    assert arr == arrSorted
+#     # Test case 4: List with duplicate elements
+#     arr = [5, 2, 8, 2, 5, 1, 3, 4, 6, 7, 9, 10, 11, 12, 13]
+#     arrSorted = sorted(arr)
+#     hybrid_sort2(arr)
+#     assert arr == arrSorted
 
-    # Test case 5: List with negative numbers
-    arr = [-4, -2, -7, -1, -5, -3, -6, -8, -9, -10, -11, -12, -13, -14, -15]
-    arrSorted = sorted(arr)
-    hybrid_sort2(arr)
-    assert arr == arrSorted
+#     # Test case 5: List with negative numbers
+#     arr = [-4, -2, -7, -1, -5, -3, -6, -8, -9, -10, -11, -12, -13, -14, -15]
+#     arrSorted = sorted(arr)
+#     hybrid_sort2(arr)
+#     assert arr == arrSorted
 
-    print("Hybrid Sort 2: PASSED")
+#     print("Hybrid Sort 2: PASSED")
 
-def hybrid_sort3_test():
-     # Test case 1: Empty list
-    arr = []
-    arrSorted = sorted(arr)
-    hybrid_sort3(arr)
-    assert arr == arrSorted
+# def hybrid_sort3_test():
+#      # Test case 1: Empty list
+#     arr = []
+#     arrSorted = sorted(arr)
+#     hybrid_sort3(arr)
+#     assert arr == arrSorted
 
-    # Test case 2: List with one element
-    arr = [5]
-    arrSorted = sorted(arr)
-    hybrid_sort3(arr)
-    assert arr == arrSorted
+#     # Test case 2: List with one element
+#     arr = [5]
+#     arrSorted = sorted(arr)
+#     hybrid_sort3(arr)
+#     assert arr == arrSorted
 
-    # Test case 3: List with multiple elements
-    arr = [9, 3, 7, 1, 5, 2, 8, 4, 6, 10, 15, 12, 11, 14, 13]
-    arrSorted = sorted(arr)
-    hybrid_sort3(arr)
-    assert arr == arrSorted
+#     # Test case 3: List with multiple elements
+#     arr = [9, 3, 7, 1, 5, 2, 8, 4, 6, 10, 15, 12, 11, 14, 13]
+#     arrSorted = sorted(arr)
+#     hybrid_sort3(arr)
+#     assert arr == arrSorted
 
-    # Test case 4: List with duplicate elements
-    arr = [5, 2, 8, 2, 5, 1, 3, 4, 6, 7, 9, 10, 11, 12, 13]
-    arrSorted = sorted(arr)
-    hybrid_sort3(arr)
-    assert arr == arrSorted
+#     # Test case 4: List with duplicate elements
+#     arr = [5, 2, 8, 2, 5, 1, 3, 4, 6, 7, 9, 10, 11, 12, 13]
+#     arrSorted = sorted(arr)
+#     hybrid_sort3(arr)
+#     assert arr == arrSorted
 
-    # Test case 5: List with negative numbers
-    arr = [-4, -2, -7, -1, -5, -3, -6, -8, -9, -10, -11, -12, -13, -14, -15]
-    arrSorted = sorted(arr)
-    hybrid_sort3(arr)
-    assert arr == arrSorted
+#     # Test case 5: List with negative numbers
+#     arr = [-4, -2, -7, -1, -5, -3, -6, -8, -9, -10, -11, -12, -13, -14, -15]
+#     arrSorted = sorted(arr)
+#     hybrid_sort3(arr)
+#     assert arr == arrSorted
 
-    print("Hybrid Sort 3: PASSED")
+#     print("Hybrid Sort 3: PASSED")
 
     
-insertion_sort_test()
-merge_sort_test()
-shell_sort_1_test()
-shell_sort_2_test()
-shell_sort_3_test()
-shell_sort_4_test()
-hybrid_sort1_test()
-hybrid_sort2_test()
-hybrid_sort3_test()
+# insertion_sort_test()
+# merge_sort_test()
+# shell_sort_1_test()
+# shell_sort_2_test()
+# shell_sort_3_test()
+# shell_sort_4_test()
+# hybrid_sort1_test()
+# hybrid_sort2_test()
+# hybrid_sort3_test()
