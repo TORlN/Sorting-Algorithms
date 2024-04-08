@@ -225,7 +225,7 @@ def testHybrid3(sortedNums, shuffledNums, almostSortedNums, reversedNums):
 
 
 def main():
-    testN = [100, 500, 1000, 2500, 5000, 10000]
+    testN = [100, 500, 1000, 2500, 5000, 10000, 25000]
     insertion_timings = np.zeros((len(testN), 3))
     merge_timings = np.zeros((len(testN), 3))
     shell1_timings = np.zeros((len(testN), 3))
