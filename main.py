@@ -13,6 +13,7 @@ from shell_sort4 import shell_sort4
 from hybrid_sort1 import hybrid_sort1
 from hybrid_sort2 import hybrid_sort2
 from hybrid_sort3 import hybrid_sort3
+from sklearn.metrics import r2_score
 
 
 def plot_and_save_best_fit_lines(testN, timings, algorithm_name):
@@ -27,32 +28,33 @@ def plot_and_save_best_fit_lines(testN, timings, algorithm_name):
     for i, label in enumerate(labels):  # For each input distribution
         y_log = np.log(timings[:, i])
         slope, intercept = np.polyfit(x_log, y_log, 1)
-        best_fit_y = np.exp(intercept) * testN**slope
+        best_fit_y_log = slope * x_log + intercept  # Logarithm of the predicted values
+        best_fit_y = np.exp(best_fit_y_log)  # Anti-log to get back to the original scale
 
-        plt.plot(
+        plt.loglog(
             testN, best_fit_y, color=colors[i], label=f"{algorithm_name} - {label}"
         )
 
-        # Create equation string
-        equation_str = f"{label}: y = {np.exp(intercept):.2e}x^({slope:.2f})"
+        # Calculate R^2 and MSE
+        r2 = r2_score(y_log, best_fit_y_log)
+
+        # Create equation and metrics string
+        metrics_str = f"{label}: y = {np.exp(intercept):.2e}x^({slope:.2f}), error = {r2:.4f}"
 
         # Place text on the plot
         plt.text(
             0,
             y_position,
-            equation_str,
+            metrics_str,
             transform=plt.gca().transAxes,
             color=colors[i],
         )
-        y_position -= 0.03  # Adjust y position for the next line of text
+        y_position -= 0.03  # Adjust y position for the next line of text, making room for additional metrics
 
-    plt.xscale("log")
-    plt.yscale("log")
     plt.xlabel("Array Size (n)")
     plt.ylabel("Time (seconds)")
     plt.title(f"Best Fit Lines for {algorithm_name} on Log-Log Scale")
     plt.legend()
-    plt.grid(True)
 
     # Save each plot with a unique name based on the algorithm
     plt.savefig(f"{algorithm_name}_Performance.png")
@@ -64,10 +66,9 @@ def plot_and_save_actual_timings(testN, timings, algorithm_name):
     labels = ['Shuffled', 'Almost Sorted', 'Reversed']
     
     for i, label in enumerate(labels):  # For each input distribution
-        plt.plot(testN, timings[:, i], 'o-', color=colors[i], label=f'{algorithm_name} - {label}')
+        plt.loglog(testN, timings[:, i], 'o-', color=colors[i], label=f'{algorithm_name} - {label}')
 
-    plt.xscale('log')
-    plt.yscale('log')
+
     plt.xlabel('Array Size (n)')
     plt.ylabel('Time (seconds)')
     plt.title(f'Actual Timings for {algorithm_name} on Log-Log Scale')
