@@ -31,23 +31,27 @@ def plot_and_save_best_fit_lines(testN, timings, algorithm_name):
         best_fit_y_log = slope * x_log + intercept  # Logarithm of the predicted values
         best_fit_y = np.exp(best_fit_y_log)  # Anti-log to get back to the original scale
 
+        # Plot the actual data points
+        plt.loglog(testN, timings[:, i], 'o', color=colors[i], label=f"{algorithm_name} - {label} Actual")
+
+        # Plot the best fit line as a dashed line
         plt.loglog(
-            testN, best_fit_y, color=colors[i], label=f"{algorithm_name} - {label}"
+            testN, best_fit_y, '--', color=colors[i], label=f"{algorithm_name} - {label} Best Fit"
         )
 
-        # Calculate R^2 and MSE
+        # Calculate R^2
         r2 = r2_score(y_log, best_fit_y_log)
 
         # Create equation and metrics string
-        metrics_str = f"{label}: y = {np.exp(intercept):.2e}x^({slope:.2f}), error = {r2:.4f}"
+        metrics_str = f"{label}: y = {np.exp(intercept):.2e}x^({slope:.2f}), R² = {r2:.4f}"
 
         # Place text on the plot
         plt.text(
-            0,
+            0.05,  # Adjust horizontal position to be a bit away from the y-axis
             y_position,
             metrics_str,
             transform=plt.gca().transAxes,
-            color=colors[i],
+            color=colors[i]
         )
         y_position -= 0.03  # Adjust y position for the next line of text, making room for additional metrics
 
@@ -328,15 +332,15 @@ def main():
     plot_and_save_best_fit_lines(testN, hybrid2_timings, "Hybrid Sort 2")
     plot_and_save_best_fit_lines(testN, hybrid3_timings, "Hybrid Sort 3")
     
-    plot_and_save_actual_timings(testN, insertion_timings, "Insertion Sort")
-    plot_and_save_actual_timings(testN, merge_timings, "Merge Sort")
-    plot_and_save_actual_timings(testN, shell1_timings, "Shell Sort 1")
-    plot_and_save_actual_timings(testN, shell2_timings, "Shell Sort 2")
-    plot_and_save_actual_timings(testN, shell3_timings, "Shell Sort 3")
-    plot_and_save_actual_timings(testN, shell4_timings, "Shell Sort 4")
-    plot_and_save_actual_timings(testN, hybrid1_timings, "Hybrid Sort 1")
-    plot_and_save_actual_timings(testN, hybrid2_timings, "Hybrid Sort 2")
-    plot_and_save_actual_timings(testN, hybrid3_timings, "Hybrid Sort 3")
+    # plot_and_save_actual_timings(testN, insertion_timings, "Insertion Sort")
+    # plot_and_save_actual_timings(testN, merge_timings, "Merge Sort")
+    # plot_and_save_actual_timings(testN, shell1_timings, "Shell Sort 1")
+    # plot_and_save_actual_timings(testN, shell2_timings, "Shell Sort 2")
+    # plot_and_save_actual_timings(testN, shell3_timings, "Shell Sort 3")
+    # plot_and_save_actual_timings(testN, shell4_timings, "Shell Sort 4")
+    # plot_and_save_actual_timings(testN, hybrid1_timings, "Hybrid Sort 1")
+    # plot_and_save_actual_timings(testN, hybrid2_timings, "Hybrid Sort 2")
+    # plot_and_save_actual_timings(testN, hybrid3_timings, "Hybrid Sort 3")
     
 
 
